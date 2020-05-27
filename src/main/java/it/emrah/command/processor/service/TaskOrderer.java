@@ -17,7 +17,6 @@ public class TaskOrderer {
         for (var key : tasksGraph.keySet()) {
             buildDependencyOrder(key, tasksGraph);
         }
-
     }
 
     public List<Task> getOrderedTasks() {
@@ -38,5 +37,4 @@ public class TaskOrderer {
         visited.add(node);
         orderedTasks.add(task);
     }
-
 }

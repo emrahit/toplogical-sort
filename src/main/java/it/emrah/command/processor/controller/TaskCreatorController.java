@@ -35,7 +35,7 @@ public class TaskCreatorController {
     }
 
     @PostMapping("/bash")
-    public ResponseEntity<String> processTasksAsBash(@RequestBody @Valid TaskRequest taskRequest) {
+    public ResponseEntity<String> processTasksAsBash(@RequestBody TaskRequest taskRequest) {
         RequestValidator.validate(taskRequest);
         String result = this.tasksService.getOrderedTasksAsExecutableBash(taskRequest);
         return new ResponseEntity<>(result, HttpStatus.ACCEPTED);
